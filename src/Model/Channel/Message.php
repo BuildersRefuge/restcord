@@ -161,7 +161,7 @@ class Message {
 	/**
 	 * when this message was sent
 	 *
-	 * @var int
+	 * @var ISO8601 timestamp
 	 */
 	public $timestamp;
 

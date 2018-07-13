@@ -3583,7 +3583,7 @@
                     },
                     "last_pin_timestamp?": {
                         "location": "json",
-                        "type": "integer",
+                        "type": "ISO8601 timestamp",
                         "description": "when the last pinned message was pinned"
                     }
                 }
@@ -3616,7 +3616,7 @@
                     },
                     "timestamp": {
                         "location": "json",
-                        "type": "integer",
+                        "type": "ISO8601 timestamp",
                         "description": "when this message was sent"
                     },
                     "edited_timestamp": {
@@ -3801,7 +3801,7 @@
                     },
                     "timestamp": {
                         "location": "json",
-                        "type": "integer",
+                        "type": "ISO8601 timestamp",
                         "description": "timestamp of embed content"
                     },
                     "color": {

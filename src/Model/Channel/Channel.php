@@ -63,7 +63,7 @@ class Channel {
 	/**
 	 * when the last pinned message was pinned
 	 *
-	 * @var int|null
+	 * @var ISO8601 timestamp|null
 	 */
 	public $last_pin_timestamp;
 
