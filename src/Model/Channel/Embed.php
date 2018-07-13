@@ -126,7 +126,7 @@ class Embed {
 	/**
 	 * timestamp of embed content
 	 *
-	 * @var ISO8601 timestamp
+	 * @var string
 	 */
 	public $timestamp;
 

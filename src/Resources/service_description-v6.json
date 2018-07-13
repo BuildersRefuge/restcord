@@ -3583,7 +3583,7 @@
                     },
                     "last_pin_timestamp?": {
                         "location": "json",
-                        "type": "ISO8601 timestamp",
+                        "type": "string",
                         "description": "when the last pinned message was pinned"
                     }
                 }
@@ -3616,12 +3616,12 @@
                     },
                     "timestamp": {
                         "location": "json",
-                        "type": "ISO8601 timestamp",
+                        "type": "string",
                         "description": "when this message was sent"
                     },
                     "edited_timestamp": {
                         "location": "json",
-                        "type": "ISO8601 timestamp",
+                        "type": "string",
                         "nullable": true,
                         "description": "when this message was edited (or null if never)"
                     },
@@ -3801,7 +3801,7 @@
                     },
                     "timestamp": {
                         "location": "json",
-                        "type": "ISO8601 timestamp",
+                        "type": "string",
                         "description": "timestamp of embed content"
                     },
                     "color": {
