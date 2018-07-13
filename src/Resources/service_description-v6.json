@@ -1407,6 +1407,55 @@
                         "type": "snowflake",
                         "location": "uri",
                         "required": true
+                    },
+                    "content": {
+                        "location": "json",
+                        "type": "string",
+                        "description": "the message contents (up to 2000 characters)",
+                        "extra": {
+                            "Required": "true"
+                        }
+                    },
+                    "nonce": {
+                        "location": "json",
+                        "type": "snowflake",
+                        "description": "a nonce that can be used for optimistic message sending",
+                        "extra": {
+                            "Required": "false"
+                        }
+                    },
+                    "tts": {
+                        "location": "json",
+                        "type": "bool",
+                        "description": "true if this is a TTS message",
+                        "default": false,
+                        "extra": {
+                            "Required": "false"
+                        }
+                    },
+                    "file": {
+                        "location": "json",
+                        "type": "file contents",
+                        "description": "the contents of the file being sent",
+                        "extra": {
+                            "Required": "one of content, file, embeds (multipart/form-data only)"
+                        }
+                    },
+                    "embed": {
+                        "location": "json",
+                        "type": "object",
+                        "description": "embedded rich content",
+                        "extra": {
+                            "Required": "false"
+                        }
+                    },
+                    "payload_json": {
+                        "location": "json",
+                        "type": "string",
+                        "description": "url-encoded JSON body used in place of the embed field",
+                        "extra": {
+                            "Required": "multipart/form-data only"
+                        }
                     }
                 },
                 "parametersArray": false

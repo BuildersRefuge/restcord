@@ -45,7 +45,7 @@ interface Channel {
 	/**
 	 * @see https://discordapp.com/developers/docs/resources/channel#create-message
 	 *
-	 * @param array $options ['channel.id' => 'snowflake']
+	 * @param array $options ['channel.id' => 'snowflake', 'content' => 'string', 'nonce' => 'snowflake', 'tts' => 'bool', 'file' => 'file contents', 'embed' => 'object', 'payload_json' => 'string']
 	 * @return array
 	 */
 	public function createMessage(array $options);
