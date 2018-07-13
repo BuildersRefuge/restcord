@@ -19,6 +19,20 @@ namespace RestCord\Model\Invite;
 class Invite {
 
 	/**
+	 * approximate count of total members
+	 *
+	 * @var int|null
+	 */
+	public $approximate_member_count;
+
+	/**
+	 * approximate count of online members
+	 *
+	 * @var int|null
+	 */
+	public $approximate_presence_count;
+
+	/**
 	 * the channel this invite is for
 	 *
 	 * @var array

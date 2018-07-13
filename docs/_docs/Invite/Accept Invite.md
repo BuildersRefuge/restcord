@@ -12,7 +12,7 @@ $client->invite->acceptInvite($parameters);
 
 ## Description
 
-This endpoint is deprecated and will be discontinued on March 23, 2018. Add Guild Member should be used in its place.
+
 
 ## Parameters
 

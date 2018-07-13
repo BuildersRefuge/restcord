@@ -22,7 +22,7 @@ interface AuditLog {
 	 * @see https://discordapp.com/developers/docs/resources/audit-log#get-guild-audit-log
 	 *
 	 * @param array $options ['guild.id' => 'snowflake']
-	 * @return \RestCord\Model\AuditLog\AuditLog Returns an audit log object for the guild.
+	 * @return \GuzzleHttp\Command\Result Returns an audit log object for the guild.
 	 */
 	public function getGuildAuditLog(array $options);
 }

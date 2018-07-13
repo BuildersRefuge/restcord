@@ -12,7 +12,7 @@ $client->emoji->listGuildEmojis($parameters);
 
 ## Description
 
-
+Requires the MANAGE_EMOJIS permission.
 
 ## Parameters
 

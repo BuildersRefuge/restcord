@@ -61,7 +61,7 @@ interface Webhook {
 	/**
 	 * @see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
 	 *
-	 * @param array $options ['webhook.id' => 'snowflake', 'webhook.token' => 'string', 'wait' => 'bool', 'content' => 'string', 'username' => 'string', 'avatar_url' => 'string', 'tts' => 'bool', 'file' => 'file contents', 'embeds' => 'array']
+	 * @param array $options ['webhook.id' => 'snowflake', 'webhook.token' => 'string']
 	 * @return array
 	 */
 	public function executeWebhook(array $options);

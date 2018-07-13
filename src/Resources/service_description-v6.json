@@ -1175,7 +1175,7 @@
                 "responseTypes": [
                     {
                         "name": "audit log",
-                        "type": "audit-log/audit-log"
+                        "type": "AUDIT_LOG/audit-log"
                     }
                 ],
                 "parameters": {
@@ -1401,61 +1401,12 @@
                 "name": "Create Message",
                 "method": "POST",
                 "url": "/channels/{channel.id}/messages",
-                "description": "Before using this endpoint, you must connect to and identify with a gateway at least once.",
+                "description": "",
                 "parameters": {
                     "channel.id": {
                         "type": "snowflake",
                         "location": "uri",
                         "required": true
-                    },
-                    "content": {
-                        "location": "json",
-                        "type": "string",
-                        "description": "the message contents (up to 2000 characters)",
-                        "extra": {
-                            "Required": "true"
-                        }
-                    },
-                    "nonce": {
-                        "location": "json",
-                        "type": "snowflake",
-                        "description": "a nonce that can be used for optimistic message sending",
-                        "extra": {
-                            "Required": "false"
-                        }
-                    },
-                    "tts": {
-                        "location": "json",
-                        "type": "bool",
-                        "description": "true if this is a TTS message",
-                        "default": false,
-                        "extra": {
-                            "Required": "false"
-                        }
-                    },
-                    "file": {
-                        "location": "json",
-                        "type": "file contents",
-                        "description": "the contents of the file being sent",
-                        "extra": {
-                            "Required": "one of content, file, embeds (multipart/form-data only)"
-                        }
-                    },
-                    "embed": {
-                        "location": "json",
-                        "type": "object",
-                        "description": "embedded rich content",
-                        "extra": {
-                            "Required": "false"
-                        }
-                    },
-                    "payload_json": {
-                        "location": "json",
-                        "type": "string",
-                        "description": "url-encoded JSON body used in place of the embed field",
-                        "extra": {
-                            "Required": "multipart/form-data only"
-                        }
                     }
                 },
                 "parametersArray": false
@@ -1979,7 +1930,7 @@
                 "name": "List Guild Emojis",
                 "method": "GET",
                 "url": "/guilds/{guild.id}/emojis",
-                "description": "",
+                "description": "Requires the MANAGE_EMOJIS permission.",
                 "responseNote": "Returns a list of emoji objects for the given guild.",
                 "responseTypes": [
                     {
@@ -2003,7 +1954,7 @@
                 "method": "GET",
                 "url": "/guilds/{guild.id}/emojis/{emoji.id}",
                 "description": "",
-                "responseNote": "Returns an emoji object for the given guild and emoji IDs.",
+                "responseNote": "Returns an emoji object for the given guild and emoji IDs",
                 "responseTypes": [
                     {
                         "name": "emoji",
@@ -2176,7 +2127,7 @@
                 "name": "Accept Invite",
                 "method": "POST",
                 "url": "/invites/{invite.code}",
-                "description": "This endpoint is deprecated and will be discontinued on March 23, 2018. Add Guild Member should be used in its place.",
+                "description": "",
                 "parameters": {
                     "invite.code": {
                         "type": "string",
@@ -2648,7 +2599,7 @@
                 "name": "Execute Webhook",
                 "method": "POST",
                 "url": "/webhooks/{webhook.id}/{webhook.token}",
-                "description": "This endpoint supports both JSON and form data bodies. It does require multipart/form-data requests instead of the normal JSON request type when uploading files. Make sure you set your Content-Type to multipart/form-data if you're doing that. Note that in that case, the embeds field cannot be used, but you can pass an url-encoded JSON body as a form value for payload_json.",
+                "description": "",
                 "parameters": {
                     "webhook.id": {
                         "type": "snowflake",
@@ -2659,64 +2610,6 @@
                         "type": "string",
                         "location": "uri",
                         "required": true
-                    },
-                    "wait": {
-                        "location": "query",
-                        "type": "bool",
-                        "description": "waits for server confirmation of message send before response, and returns the created message body (defaults to false; when false a message that is not saved does not return an error)",
-                        "default": false,
-                        "extra": {
-                            "Required": "false"
-                        }
-                    },
-                    "content": {
-                        "location": "json",
-                        "type": "string",
-                        "description": "the message contents (up to 2000 characters)",
-                        "extra": {
-                            "Required": "one of content, file, embeds"
-                        }
-                    },
-                    "username": {
-                        "location": "json",
-                        "type": "string",
-                        "description": "override the default username of the webhook",
-                        "extra": {
-                            "Required": "false"
-                        }
-                    },
-                    "avatar_url": {
-                        "location": "json",
-                        "type": "string",
-                        "description": "override the default avatar of the webhook",
-                        "extra": {
-                            "Required": "false"
-                        }
-                    },
-                    "tts": {
-                        "location": "json",
-                        "type": "bool",
-                        "description": "true if this is a TTS message",
-                        "default": false,
-                        "extra": {
-                            "Required": "false"
-                        }
-                    },
-                    "file": {
-                        "location": "json",
-                        "type": "file contents",
-                        "description": "the contents of the file being sent",
-                        "extra": {
-                            "Required": "one of content, file, embeds"
-                        }
-                    },
-                    "embeds": {
-                        "location": "json",
-                        "type": "array",
-                        "description": "embedded rich content",
-                        "extra": {
-                            "Required": "one of content, file, embeds"
-                        }
                     }
                 },
                 "parametersArray": false
@@ -2916,6 +2809,7 @@
                     "afk_channel_id": {
                         "location": "json",
                         "type": "snowflake",
+                        "nullable": true,
                         "description": "id of afk channel"
                     },
                     "afk_timeout": {
@@ -3058,6 +2952,7 @@
                     "channel_id": {
                         "location": "json",
                         "type": "snowflake",
+                        "nullable": true,
                         "description": "the embed channel id"
                     }
                 }
@@ -3585,6 +3480,7 @@
                     "topic?": {
                         "location": "json",
                         "type": "string",
+                        "nullable": true,
                         "description": "the channel topic (0-1024 characters)"
                     },
                     "nsfw?": {
@@ -4073,6 +3969,16 @@
                         "location": "json",
                         "type": "object",
                         "description": "the channel this invite is for"
+                    },
+                    "approximate_presence_count?": {
+                        "location": "json",
+                        "type": "int",
+                        "description": "approximate count of online members"
+                    },
+                    "approximate_member_count?": {
+                        "location": "json",
+                        "type": "int",
+                        "description": "approximate count of total members"
                     }
                 }
             },
@@ -4299,6 +4205,7 @@
                     "channel_id": {
                         "location": "json",
                         "type": "snowflake",
+                        "nullable": true,
                         "description": "the channel id this user is connected to"
                     },
                     "user_id": {
@@ -4427,64 +4334,6 @@
                         "location": "json",
                         "type": "string",
                         "description": "the secure token of the webhook"
-                    },
-                    "wait": {
-                        "location": "query",
-                        "type": "bool",
-                        "description": "waits for server confirmation of message send before response (defaults to true; when false a message that is not saved does not return an error)",
-                        "default": false,
-                        "extra": {
-                            "Required": "false"
-                        }
-                    },
-                    "content": {
-                        "location": "json",
-                        "type": "string",
-                        "description": "the message contents (up to 2000 characters)",
-                        "extra": {
-                            "Required": "one of content, file, embeds"
-                        }
-                    },
-                    "username": {
-                        "location": "json",
-                        "type": "string",
-                        "description": "override the default username of the webhook",
-                        "extra": {
-                            "Required": "false"
-                        }
-                    },
-                    "avatar_url": {
-                        "location": "json",
-                        "type": "string",
-                        "description": "override the default avatar of the webhook",
-                        "extra": {
-                            "Required": "false"
-                        }
-                    },
-                    "tts": {
-                        "location": "json",
-                        "type": "bool",
-                        "description": "true if this is a TTS message",
-                        "default": false,
-                        "extra": {
-                            "Required": "false"
-                        }
-                    },
-                    "file": {
-                        "location": "json",
-                        "type": "file contents",
-                        "description": "the contents of the file being sent",
-                        "extra": {
-                            "Required": "one of content, file, embeds"
-                        }
-                    },
-                    "embeds": {
-                        "location": "json",
-                        "type": "array",
-                        "description": "embedded rich content",
-                        "extra": {
-                            "Required": "one of content, file, embeds"
-                        }
                     }
                 }
             }
